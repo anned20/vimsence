@@ -1,0 +1,63 @@
+*vimsence.txt* Discord rich presence for Vim
+
+__     ___           ____                       ~
+\ \   / (_)_ __ ___ / ___|  ___ _ __   ___ ___  ~
+ \ \ / /| | '_ ` _ \\___ \ / _ \ '_ \ / __/ _ \ ~
+  \ V / | | | | | | |___) |  __/ | | | (_|  __/ ~
+   \_/  |_|_| |_| |_|____/ \___|_| |_|\___\___| ~
+
+==============================================================================
+CONTENTS                                                   *Vimsence-contents*
+
+    1. Introduction .................................. |VimSenceIntroduction|
+    2. Usage ......................................... |VimSenceUsage|
+    3. License ....................................... |VimSenceLisence|
+    4. Bugs .......................................... |VimSenceBugs|
+    5. Contributing .................................. |VimSenceContributing|
+    6. Contributing .................................. |VimSenceChangelog|
+
+==============================================================================
+1. Introduction                                          *VimSenceIntroduction*
+
+VimSence updates the Discord "now playing" status with what you're currently
+editing in Vim. This way you can show all your friends how cool you are
+programming in Vim.
+
+==============================================================================
+2. Usage                                                       *VimSenceUsage*
+
+You just need to have this plugin installed and Discord running, the rest
+will work automatically.
+
+If you have to manually update your presence for some kind of reason, you
+can use this: >
+
+    :UpdatePresence
+
+This will force update the Discord presence with what you're currently
+editing.
+
+==============================================================================
+3. License                                                   *VimSenceLicense*
+
+VimSense is licensed under the MIT license.
+
+==============================================================================
+4. Bugs                                                         *VimSenceBugs*
+
+If you find a bug please post it on the issue tracker:
+http://github.com/anned20/vimsence/issues/
+
+==============================================================================
+5. Contributing                                         *VimSenceContributing*
+
+Think you can make this plugin better? Awesome! Fork it on GitHub and send a
+pull request.
+
+GitHub: http://github.com/anned20/vimsence/
+
+==============================================================================
+6. Changelog                                               *VimsenceChangelog*
+
+v1.0.0
+    * Initial stable release.

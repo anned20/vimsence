@@ -1,9 +1,7 @@
 import vim
 import rpc
 import time
-
-client_id = '425602550470017024'
-rpc_obj = rpc.DiscordIpcClient.for_platform(client_id)
+import logging
 
 start_time = time.time()
 base_activity = {
@@ -18,7 +16,15 @@ base_activity = {
             'large_image': 'vim_logo'
         }
     }
-rpc_obj.set_activity(base_activity)
+
+client_id = '425602550470017024'
+
+try:
+    rpc_obj = rpc.DiscordIpcClient.for_platform(client_id)
+    rpc_obj.set_activity(base_activity)
+except Exception as e:
+    # Discord is not running
+    pass
 
 def update_presence():
     """Update presence in Discord
@@ -29,7 +35,15 @@ def update_presence():
     activity['details'] = get_filename()
     activity['assets']['large_text'] = 'Editing a {} file'.format(get_extension().upper())
     activity['assets']['large_image'] = get_extension()
-    rpc_obj.set_activity(activity)
+
+    try:
+        rpc_obj.set_activity(activity)
+    except BrokenPipeError as e:
+        # Connection to Discord is lost
+        pass
+    except NameError as e:
+        # Discord is not running
+        pass
 
 def get_filename():
     """Get current filename that is being edited

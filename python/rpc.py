@@ -180,7 +180,7 @@ class UnixDiscordIpcClient(DiscordIpcClient):
             try:
                 self._sock.connect(path)
             except OSError as e:
-                logger.error("failed to open {!r}: {}".format(path, e))
+                pass
             else:
                 break
         else:

@@ -34,7 +34,8 @@ def update_presence():
     activity = base_activity
     activity['details'] = get_filename()
     activity['assets']['large_text'] = 'Editing a {} file'.format(get_extension().upper())
-    activity['assets']['large_image'] = get_extension()
+    if get_extension():
+        activity['assets']['large_image'] = get_extension()
 
     try:
         rpc_obj.set_activity(activity)

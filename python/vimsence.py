@@ -3,7 +3,7 @@ import rpc
 import time
 import logging
 
-start_time = round(time.time())
+start_time = int(time.time())
 base_activity = {
         'details': 'Nothing',
         'timestamps': {

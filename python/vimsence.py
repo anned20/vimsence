@@ -7,7 +7,7 @@ start_time = int(time.time())
 base_activity = {
         'details': 'Nothing',
         'timestamps': {
-            "start": start_time
+            'start': start_time
         },
         'assets': {
             'small_text': 'Vim',
@@ -19,6 +19,14 @@ base_activity = {
 
 client_id = '425602550470017024'
 
+has_thumbnail = [
+    'css',
+    'js',
+    'php',
+    'py',
+    'scss',
+]
+
 try:
     rpc_obj = rpc.DiscordIpcClient.for_platform(client_id)
     rpc_obj.set_activity(base_activity)
@@ -28,14 +36,15 @@ except Exception as e:
 
 def update_presence():
     """Update presence in Discord
-    :returns: TODO
-
     """
     activity = base_activity
     activity['details'] = get_filename()
     activity['assets']['large_text'] = 'Editing a {} file'.format(get_extension().upper())
-    if get_extension():
+
+    if get_extension() and get_extension() in has_thumbnail:
         activity['assets']['large_image'] = get_extension()
+    else:
+        activity['assets']['large_image'] = 'unknown'
 
     try:
         rpc_obj.set_activity(activity)

@@ -2,6 +2,8 @@
 
 Discord rich presence for Vim
 
+**This plugin is archived in favor of [hugolgst's fork](https://github.com/hugolgst/vimsence) who does a marvelous job maintaining it**
+
 More help about the plugin itself can be found [here](doc/vimsence.txt)
 
 ## Getting Started
